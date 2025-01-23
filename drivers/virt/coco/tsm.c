@@ -289,7 +289,7 @@ static ssize_t tsm_report_read(struct tsm_report *report, void *buf,
 		return -EINVAL;
 
 	/* did another thread already generate this report? */
-	if (report->outblob && report->manifestblob &&
+	if (report->outblob && report->manifestblob && report->auxblob &&
 	    state->read_generation == state->write_generation)
 		goto out;
 
